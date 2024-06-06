@@ -1,0 +1,7 @@
+@use '/src/abstracts/mixins' as m;
+
+.appDiv {
+    max-width: 2520px;
+    min-width: 375px;
+    @include m.responsive-margin('body');
+}

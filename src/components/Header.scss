@@ -1,0 +1,34 @@
+@use '/src/abstracts/mixins' as m;
+@use '/src/abstracts/functions' as f;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include m.responsive-font('headerBanner');
+;
+
+  img {
+    width: 145px;
+  }
+  nav {
+    ul {
+      display: flex;
+      gap: 1.625rem;
+      list-style: none;
+      padding: 0;
+
+      li {
+        text-transform: uppercase;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

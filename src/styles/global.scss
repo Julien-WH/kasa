@@ -1,0 +1,11 @@
+@use '/src/abstracts/variables' as var;
+@use '/src/abstracts/mixins' as m;
+
+body {
+  font-family: var.$primaryfont;
+  color: var.$primaryfontcolor;
+  background-color: #fff;
+  // @include m.responsive-margin('body');
+
+
+}

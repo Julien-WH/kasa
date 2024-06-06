@@ -1,0 +1,59 @@
+@use "functions" as f;
+
+// Breakpoints
+$breakpoints: (
+  "small": 0,
+  "medium": 768px,
+  "large": 1440px,
+);
+
+// Fonts
+$primaryfont: "Montserrat", sans-serif;
+
+// Colors
+$red: #ff6060;
+
+// Backgrounds
+$primarybackgroundcolor: $red;
+
+// Fonts colors
+$primaryfontcolor: #000;
+$secondaryfontcolor: #fff;
+
+// Fonts sizes
+$font-sizes: (
+  "headerBanner": (
+    "small": f.toRem(12),
+    "medium": f.toRem(18),
+    "large": f.toRem(24),
+  ),
+  "h1": (
+    "small": 1rem,
+    "medium": 1rem,
+    "large": 1rem,
+  ),
+  "h2": (
+    "small": 1rem,
+    "medium": 1rem,
+    "large": 1rem,
+  ),
+  "h3": (
+    "small": f.toRem(13),
+    "medium": f.toRem(18),
+    "large": f.toRem(24),
+  ),
+  "content": (
+    "small": f.toRem(12),
+    "medium": f.toRem(16),
+    "large": f.toRem(18),
+  ),
+);
+
+// Margins
+$margins: (
+  "body": (
+    "small": f.toRem(20),
+    "medium": f.toRem(32) f.toRem(60),
+    "large": f.toRem(45) f.toRem(100),
+  ),
+);
