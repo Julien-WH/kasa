@@ -5,7 +5,8 @@ body {
   font-family: var.$primaryfont;
   color: var.$primaryfontcolor;
   background-color: #fff;
-  // @include m.responsive-margin('body');
 
+  display: flex;
+  justify-content: center;
 
 }
