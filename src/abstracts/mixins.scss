@@ -1,0 +1,26 @@
+@use 'variables' as var;
+
+// Mixin qui applique une taille de police responsive
+@mixin responsive-font($element) {
+  font-size: map-get(map-get(var.$font-sizes, $element), 'small');
+
+    @media (min-width: map-get(var.$breakpoints, 'medium')) {
+      font-size: map-get(map-get(var.$font-sizes, $element), 'medium');
+    }
+
+    @media (min-width: map-get(var.$breakpoints, 'large')) {
+      font-size: map-get(map-get(var.$font-sizes, $element), 'large');
+    }
+}
+
+@mixin responsive-margin($element) {
+  margin: map-get(map-get(var.$margins, $element), 'small');
+
+    @media (min-width: map-get(var.$breakpoints, 'medium')) {
+      margin: map-get(map-get(var.$margins, $element), 'medium');
+    }
+
+    @media (min-width: map-get(var.$breakpoints, 'large')) {
+      margin: map-get(map-get(var.$margins, $element), 'large');
+    }
+}
