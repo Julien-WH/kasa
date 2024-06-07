@@ -1,34 +1,29 @@
-@use '/src/abstracts/variables' as var;
-@use '/src/abstracts/mixins' as m;
-@use '/src/abstracts/functions' as f;
+@use "/src/abstracts/variables" as var;
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/functions" as f;
 .aboutSection {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include m.responsive-gap("page");
 
-    header {
-        border-radius: 10px;
-        overflow: hidden;
-        filter: brightness(70%);
+  header {
+    border-radius: 10px;
+    overflow: hidden;
+    filter: brightness(70%);
+    width: 100%;
 
-        img {
-             object-fit: cover;
-                width: 100%;
-                height: 111px;
-        }; 
-     }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 111px;
+    }
+  }
 
-     h3 {
-        @include m.responsive-font('h3');
-        color: var.$secondaryfontcolor;
-        background-color: var.$primarybackgroundcolor;
-        border-radius: 5px;
-        padding: 0.625rem;
-        margin: 0;
-     }
-
-     p {
-        @include m.responsive-font('content');
-     }
+  .aboutContent {
+   @include m.media-query("large") {
+     width: 82.5%;
+   
+ }
 }
-
+}

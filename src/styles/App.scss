@@ -2,7 +2,14 @@
 @use '/src/abstracts/variables' as var;
 
 .appDiv {
-    max-width: 2520px;
-    min-width: calc(375px - map-get(var.$margins, 'body', 'small') * 2);  
-    @include m.responsive-margin('body');
+    // box-sizing: border-box;
+    // @include m.responsive-margin('body');
+    // display: flex;
+    // flex-direction: column;
+    // @include m.responsive-gap('components');
+    // display: grid;
+    // grid-template-rows: auto 1fr auto;
+    // width: 100vh;
+    // min-height: 100vh;
+    
 }

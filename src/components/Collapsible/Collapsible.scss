@@ -1,0 +1,70 @@
+@use "/src/abstracts/variables" as var;
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/functions" as f;
+
+.collapsibleDiv {
+  width: 100%;
+
+  button {
+    @include m.responsive-font("collapsibleButton");
+    color: var.$secondaryfontcolor;
+    text-align: left;
+
+    background-color: var.$primarybackgroundcolor;
+
+    border: none;
+    border-radius: 5px;
+    padding: 0.625rem;
+    margin: 0;
+    cursor: pointer;
+
+    width: 100%;
+
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "\f078";
+      font: var(--fa-font-solid);
+      @include m.responsive-font("collapsibleButton");
+
+      position: absolute;
+      right: 0.625rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &.open::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  p {
+    @include m.responsive-font("content");
+    background-color: var.$collapriseBgColor;
+    margin: 0;
+  }
+
+  .content {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    padding-inline: f.toRem(20);
+    transition: all 0.3s ease-in-out;
+
+    &.open {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      max-height: 100vh;
+      padding-block: f.toRem(13) f.toRem(20);
+      @include m.media-query("medium") {
+        padding-block: f.toRem(20) f.toRem(30);
+      }
+    }
+  }
+}

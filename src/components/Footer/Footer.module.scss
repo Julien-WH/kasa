@@ -1,0 +1,25 @@
+@use '/src/abstracts/variables' as var;
+@use '/src/abstracts/mixins' as m;
+@use '/src/abstracts/functions' as f;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var.$footerBgColor;
+    color: var.$secondaryfontcolor;
+    gap: 20px;
+    padding-block: 66px 58px;
+    align-items: center;
+    width: 100%;
+    &__content {
+        margin: 0;
+        @include m.responsive-font("content");
+        max-width: f.toRem(122);
+        @include m.media-query("medium") {
+            max-width: none;
+        }
+        text-align: center;
+    }
+
+
+}

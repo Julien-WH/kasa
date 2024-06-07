@@ -24,3 +24,35 @@
       margin: map-get(map-get(var.$margins, $element), 'large');
     }
 }
+
+@mixin responsive-padding($element) {
+    padding: map-get(map-get(var.$paddings, $element), 'small');
+  
+      @media (min-width: map-get(var.$breakpoints, 'medium')) {
+        padding: map-get(map-get(var.$paddings, $element), 'medium');
+      }
+  
+      @media (min-width: map-get(var.$breakpoints, 'large')) {
+        padding: map-get(map-get(var.$paddings, $element), 'large');
+      }
+  }
+
+@mixin responsive-gap($element) {
+    gap: map-get(map-get(var.$gaps, $element), 'small');
+
+    @media (min-width: map-get(var.$breakpoints, 'medium')) {
+      gap: map-get(map-get(var.$gaps, $element), 'medium');
+        
+    }
+
+    @media (min-width: map-get(var.$breakpoints, 'large')) {
+        gap: map-get(map-get(var.$gaps, $element), 'large');
+          
+      }
+}
+
+@mixin media-query($breakpoint) {
+    @media (min-width: map-get(var.$breakpoints, $breakpoint)) {
+        @content;
+    }
+}

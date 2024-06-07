@@ -1,18 +1,19 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import About from './pages/About';
 import './styles/App.scss';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className='appDiv'>
+    <>
       <Header />
       <Routes>
         <Route path="/about" element={<About />} />
-        {/* add more routes as needed */}
       </Routes>
-    </div>
+      <Footer />
+    </>
   );
 }
 

@@ -1,24 +1,29 @@
 @use '/src/abstracts/mixins' as m;
 @use '/src/abstracts/functions' as f;
+@use '/src/abstracts/variables' as var;
 
-header {
+.header {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @include m.responsive-font('headerBanner');
+  @include m.responsive-padding('header');
+  max-width: 1440px;
+  width: 100%;
 ;
 
-  img {
+  .logo {
     width: 145px;
   }
-  nav {
-    ul {
+  .nav {
+    .ul {
       display: flex;
       gap: 1.625rem;
       list-style: none;
       padding: 0;
 
-      li {
+      .li {
         text-transform: uppercase;
       }
     }
