@@ -9,9 +9,18 @@ body {
 
 #root {
   width: 100vw;
-  min-width: calc(375px - map-get(var.$margins, 'body', 'small') * 2);  
+  // min-width: calc(375px - map-get(var.$margins, 'body', 'small') * 2);
+  min-width: 375px;  
   display: grid;
+  margin-top: 20px;
+  @include m.media-query('medium') {
+    margin-top: 30px;
+  }
+  @include m.media-query('large') {
+    margin-top: 45px;
+  }
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  @include m.responsive-gap('components');
   justify-items: center;
 }

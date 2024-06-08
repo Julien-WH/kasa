@@ -8,8 +8,7 @@
   justify-content: space-between;
   align-items: center;
   @include m.responsive-font('headerBanner');
-  @include m.responsive-padding('header');
-  max-width: 1440px;
+  @include m.mainComponentsWidth;
   width: 100%;
 ;
 
@@ -19,7 +18,10 @@
   .nav {
     .ul {
       display: flex;
-      gap: 1.625rem;
+      gap: f.toRem(25);	
+      @include m.media-query ('medium') {
+        gap: f.toRem(60);
+      }
       list-style: none;
       padding: 0;
 

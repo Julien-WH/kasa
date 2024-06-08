@@ -6,6 +6,8 @@ $breakpoints: (
   "medium": 768px,
   "large": 1440px,
 );
+// Max width
+$maxWidth: 1240px;
 
 // Fonts
 $primaryfont: "Montserrat", sans-serif;
@@ -14,7 +16,7 @@ $primaryfont: "Montserrat", sans-serif;
 $red: #ff6060;
 
 // Backgrounds
-$primarybackgroundcolor: $red;
+$secondaryBackgroundColor: $red;
 $collapriseBgColor: rgba(246, 246, 246, 0.45);
 $footerBgColor: #000;
 
@@ -51,29 +53,29 @@ $font-sizes: (
   ),
 );
 
-// Margins
-$margins: (
-  "body": (
-    "small": f.toRem(20),
-    "medium": f.toRem(32) f.toRem(60),
-    "large": f.toRem(45) f.toRem(100),
-  ),
-);
+// // Margins
+// $margins: (
+//   "body": (
+//     "small": f.toRem(20),
+//     "medium": f.toRem(32) f.toRem(60),
+//     "large": f.toRem(45) f.toRem(100),
+//   ),
+// );
 
 // Paddings
 $paddings: (
   "header": (
-    "small": f.toRem(20) f.toRem(20) 0 f.toRem(20),
-    "medium": f.toRem(45) f.toRem(100) 0 f.toRem(100),
-    "large": f.toRem(45) f.toRem(100) 0 f.toRem(100),
+    "small": f.toRem(20),
+    "medium": f.toRem(30),
+    "large": f.toRem(45),
   ),
 );
 
 // Gaps
 $gaps: (
   "components": (
-    "small": f.toRem(20),
-    "medium": f.toRem(38),
+    "small": f.toRem(27),
+    "medium": f.toRem(50),
   ),
   "page": (
     "small": f.toRem(20),
