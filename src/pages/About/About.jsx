@@ -1,7 +1,7 @@
-import Collapsible from '../components/Collapsible/Collapsible';
+import Collapsible from '../../components/Collapsible/Collapsible';
 import React from 'react';
 import styles from './About.module.scss';
-import data from '../../datas/aboutDatas.json';
+import data from '../../../datas/aboutDatas.json';
 
 function About() {
 

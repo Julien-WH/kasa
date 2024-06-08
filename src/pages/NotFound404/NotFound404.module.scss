@@ -1,0 +1,45 @@
+@use "/src/abstracts/variables" as var;
+@use "/src/abstracts/functions" as f;
+@use "/src/abstracts/mixins" as m;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var.$red;
+  max-width: calc(375px - 57.5px * 2);
+  @include m.media-query("medium") {
+    max-width: none;
+  }
+  gap: 113px;
+  padding-block: 93px;
+  @include m.media-query("medium") {
+    padding-block: 63px;
+  }
+}
+
+.title {
+  font-size: 96px;
+  @include m.media-query("large") {
+    font-size: f.toRem(288);
+  }
+  margin: 0;
+}
+
+.message {
+  font-size: f.toRem(18);
+  @include m.media-query("large") {
+    font-size: f.toRem(36);
+  }
+  text-align: center;
+  margin: 0;
+}
+
+.link {
+  color: var.$black;
+  font-size: f.toRem(14);
+  @include m.media-query("large") {
+    font-size: f.toRem(18);
+  }
+}
