@@ -5,12 +5,14 @@ import About from './pages/About/About';
 import './styles/App.scss';
 import Footer from './components/Footer/Footer';
 import NotFound404 from './pages/NotFound404/NotFound404';
+import Home from './components/Home/Home';
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
