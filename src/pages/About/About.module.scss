@@ -8,33 +8,6 @@
   @include m.responsive-gap("page");
   @include m.mainComponentsWidth;
 
-
-  .header {
-    border-radius: 10px;
-    overflow: hidden;
-    filter: brightness(70%);
-    width: 100%;
-    height: 111px;
-    @include m.media-query("medium") {
-      height: 167px;
-    }
-    @include m.media-query("large") {
-      height: 223px;
-    }
-
-    .img {
-      object-fit: cover;
-      width: 100%;
-      height: 111px;
-      @include m.media-query("medium") {
-        height: 167px;
-      }
-      @include m.media-query("medium") {
-        height: 223px;
-      }
-    }
-  }
-
   .content {
    @include m.media-query("medium") {
      width: 82.5%;

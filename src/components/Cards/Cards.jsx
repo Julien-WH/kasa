@@ -8,13 +8,13 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <section className={styles.section}>
+    <>
       <ul className={styles.cards}>
         {logementDatas.map((data) => (
           <Card key={data.id} data={data} />
         ))}
       </ul>
-    </section>
+    </>
   );
 }
 

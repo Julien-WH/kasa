@@ -1,0 +1,11 @@
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/variables" as var;
+@use "/src/abstracts/functions" as f;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  @include m.responsive-gap("page");
+  @include m.mainComponentsWidth;
+  width: 100%;
+}

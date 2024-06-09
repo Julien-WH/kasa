@@ -1,18 +1,13 @@
-import Collapsible from "../../components/Collapsible/Collapsible";
 import React from "react";
 import styles from "./About.module.scss";
 import data from "../../../datas/aboutDatas.json";
+import Collapsible from "../../components/Collapsible/Collapsible";
+import PageBanner from "../../components/PageBanner/PageBanner";
 
 function About() {
   return (
     <section className={styles.section}>
-      <header className={styles.header}>
-        <img
-          className={styles.img}
-          src="src\assets\images\about-header.jpeg"
-          alt="Une photo d'un paysage avec des montagnes et une forêt de sapins."
-        />
-      </header>
+<PageBanner page="aboutPage" />
 
       {/* Ajout des collapsibles avec les données du json */}
       {data.map((item, index) => (

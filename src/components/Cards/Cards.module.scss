@@ -2,21 +2,27 @@
 @use "/src/abstracts/variables" as var;
 @use "/src/abstracts/functions" as f;
 
-.section {
-  @include m.mainComponentsWidth;
-  width: 100%;
-  
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 
-  .cards {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
-    align-items: stretch;
-    gap: 1rem;
-  
+  @include m.media-query("medium") {
+    padding: 20px;
+    background-color: var.$grey;
+    border-radius: 25px;
+    gap: 30px;
+  }
+
+  @include m.media-query("large") {
+    padding: 50px;
+    gap: 60px;
+
+    & > li {
+      aspect-ratio: 1 / 1;
+    }
   }
 }
-
-
