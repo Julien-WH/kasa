@@ -6,7 +6,7 @@ function Collapsible({ title, children, pageClass }) {
   return (
     <div className={`${styles.container} ${pageClass} `}>
       <button className={isOpen ? `${styles.open}` : ""} onClick={() => setIsOpen(!isOpen)}>{title}</button>
-      <p className={`${styles.content} ${isOpen ? `${styles.open}` : ""}`}>{children}</p>
+      <div className={`${styles.content} ${isOpen ? `${styles.open}` : ""}`}>{children}</div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ function Header() {
 
 return (
     <header className={styles.header}>
-        <img src="src\assets\images\logo.svg" alt="Kasa" className={styles.logo} />
+        <img src="\src\assets\images\logo.svg" alt="Kasa" className={styles.logo} />
         <nav className={styles.nav}>
             <ul className={styles.ul}>
                 <li className={styles.li}><Link to="/" className={activeLink === '/' ? styles.active : ''} onClick={() => setActiveLink("/")}>Accueil</Link></li>

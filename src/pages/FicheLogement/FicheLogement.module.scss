@@ -1,0 +1,66 @@
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/functions" as f;
+@use "/src/abstracts/variables" as var;
+
+.section {
+  @include m.mainComponentsWidth;
+  display: grid;
+  grid-template-columns: repeat(2, auto); 
+  grid-template-rows: repeat(7, auto);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  grid-template-areas:
+    "carrousel carrousel"
+    "title title"
+    "location location"
+    "tags tags"
+    "rating hostProfile"
+    "description description"
+    "equipements equipements";
+
+    .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .imgContainer {
+        grid-area: carrousel;
+      }
+    
+      .title {
+        all: unset;
+        grid-area: title;
+      }
+    
+      .location {
+        grid-area: location;
+      }
+    
+      .tags {
+        grid-area: tags;
+      }
+    
+      .rating {
+        grid-area: rating;
+      }
+    
+      .hostProfile {
+        grid-area: hostProfile;
+      }
+    
+      .description {
+        grid-area: description;
+      }
+    
+      .equipments {
+        grid-area: equipements;
+      }
+    
+
+
+}
+

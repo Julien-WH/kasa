@@ -9,10 +9,13 @@ function Card({ data }) {
     <>
       <li
         className={styles.card}
-        onClick={() => navigate(`logement/${data.id}`)}
+        onClick={() => navigate(`logement/${data.id}`, { state: { data } })}
       >
         <img src={data.cover} alt={data.title} className={styles.img} />
-        <Link to={`logement/${data.id}`} className={styles.link}>
+        <Link
+          to={{ pathname: `logement/${data.id}`, state: { data } }}
+          className={styles.link}
+        >
           {data.title}
         </Link>
       </li>
