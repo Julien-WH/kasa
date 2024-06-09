@@ -5,7 +5,7 @@ import About from './pages/About/About';
 import './styles/App.scss';
 import Footer from './components/Footer/Footer';
 import NotFound404 from './pages/NotFound404/NotFound404';
-import Home from './components/Home/Home';
+import Home from './pages/Home/Home';
 
 function App() {
   return (

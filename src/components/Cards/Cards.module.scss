@@ -1,0 +1,22 @@
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/variables" as var;
+@use "/src/abstracts/functions" as f;
+
+.section {
+  @include m.mainComponentsWidth;
+  width: 100%;
+  
+
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    align-items: stretch;
+    gap: 1rem;
+  
+  }
+}
+
+

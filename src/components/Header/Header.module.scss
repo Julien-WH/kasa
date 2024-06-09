@@ -27,6 +27,9 @@
 
       .li {
         text-transform: uppercase;
+        @include m.media-query ('medium') {
+          text-transform: capitalize;
+        }
       }
     }
 

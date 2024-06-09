@@ -1,18 +1,17 @@
 import React from "react";
-import styles from "./Home.module.scss";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./Cards.module.scss";
 import logementDatas from "/datas/logements.json";
+import Card from "../Card/Card";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <section className={styles.section}>
       <ul className={styles.cards}>
         {logementDatas.map((data) => (
-          <li key={data.id} className={styles.card}>
-            <img src={data.cover} alt={data.title} className={styles.img} />
-            <a href="#" className={styles.title}>
-              {data.title}
-            </a>
-          </li>
+          <Card key={data.id} data={data} />
         ))}
       </ul>
     </section>
