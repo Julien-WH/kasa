@@ -5,10 +5,10 @@
 .section {
   @include m.mainComponentsWidth;
   display: grid;
-  grid-template-columns: repeat(2, auto); 
-  grid-template-rows: repeat(7, auto);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, min-content);
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-row-gap: 15px;
 
   grid-template-areas:
     "carrousel carrousel"
@@ -19,48 +19,106 @@
     "description description"
     "equipements equipements";
 
-    .img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
 
-      .imgContainer {
-        grid-area: carrousel;
-      }
-    
-      .title {
-        all: unset;
-        grid-area: title;
-      }
-    
-      .location {
-        grid-area: location;
-      }
-    
-      .tags {
-        grid-area: tags;
-      }
-    
-      .rating {
-        grid-area: rating;
-      }
-    
-      .hostProfile {
-        grid-area: hostProfile;
-      }
-    
-      .description {
-        grid-area: description;
-      }
-    
-      .equipments {
-        grid-area: equipements;
-      }
-    
+  .sliderContainer {
+    grid-area: carrousel;
 
+  }
 
+  .title {
+
+    grid-area: title;
+    margin: 0;
+    @include m.responsive-font("housingPageTitle");
+    color: var.$tertiaryFontColor;
+  }
+
+  .location {
+    grid-area: location;
+    @include m.responsive-font("housingPageLocation");
+  }
+
+  .tags {
+    grid-area: tags;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tag {
+    @include m.responsive-font("housingPageTags");
+    border-radius: 10px;
+    min-width: 84px;
+    padding: f.toRem(4) f.toRem(22);
+    line-height: f.toRem(11);
+    color: var.$secondaryfontcolor;
+    font-weight: bold;
+    text-wrap: nowrap;
+    text-align: center;
+    background-color: var.$secondaryBackgroundColor;
+
+  }
+
+  .rating {
+    grid-area: rating;
+  }
+
+  .hostProfileContainer {
+    grid-area: hostProfile;
+
+  }
+
+  .hostProfile {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    // align-items: center;
+    justify-content: flex-end;
+    align-self: start;
+    width: 100%;
+
+    .hostName {
+      @include m.responsive-font("housingHostProfile");
+      color: var.$tertiaryFontColor;
+      width: 50px;
+      @include m.media-query("medium") {
+        width: 100px;
+      }
+      text-align: right;
+    }
+    .hostPicture {
+      border-radius: 50%;
+      height: 32px;
+      width: 32px;
+      @include m.media-query("medium") {
+        height: 48px;
+        width: 48px;
+      }
+      @include m.media-query("large") {
+        height: 64px;
+        width: 64px;
+      }
+    }
+  }
+
+  .description {
+    grid-area: description;
+    @include m.responsive-font("content");
+
+  }
+
+  .equipments {
+    grid-area: equipements;
+    @include m.responsive-font("content");
+
+    
+    ul {
+      
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      
+    }
+  }
 }
-

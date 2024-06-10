@@ -15,7 +15,7 @@ $primaryfont: "Montserrat", sans-serif;
 // Colors
 $red: #ff6060;
 $black: #000;
-$white: #fff;	
+$white: #fff;
 $grey: #f6f6f6;
 
 // Backgrounds
@@ -26,6 +26,7 @@ $footerBgColor: #000;
 // Fonts colors
 $primaryfontcolor: #000;
 $secondaryfontcolor: #fff;
+$tertiaryFontColor: $red;
 
 // Fonts sizes
 $font-sizes: (
@@ -34,22 +35,40 @@ $font-sizes: (
     "medium": f.toRem(18),
     "large": f.toRem(24),
   ),
-  "h1": (
-    "small": 1rem,
-    "medium": 1rem,
-    "large": 1rem,
-  ),
-  "h2": (
-    "small": 1rem,
-    "medium": 1rem,
-    "large": 1rem,
-  ),
+  // "h2": (
+  //   "small": 1rem,
+  //   "medium": 1rem,
+  //   "large": 1rem,
+  // ),
   "collapsibleButton": (
     "small": f.toRem(13),
     "medium": f.toRem(18),
     "large": f.toRem(24),
   ),
   "content": (
+    "small": f.toRem(12),
+    "medium": f.toRem(16),
+    "large": f.toRem(18),
+  ),
+
+  // Housing page
+  "housingPageLocation":
+    (
+      "small": f.toRem(14),
+      "medium": f.toRem(16),
+      "large": f.toRem(18),
+    ),
+  "housingPageTitle": (
+    "small": f.toRem(18),
+    "medium": f.toRem(24),
+    "large": f.toRem(36),
+  ),
+  "housingPageTags": (
+    "small": f.toRem(10),
+    "medium": f.toRem(12),
+    "large": f.toRem(14),
+  ),
+  "housingHostProfile": (
     "small": f.toRem(12),
     "medium": f.toRem(16),
     "large": f.toRem(18),

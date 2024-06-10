@@ -1,0 +1,76 @@
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/functions" as f;
+@use "/src/abstracts/variables" as var;
+
+.container {
+  height: 255px;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+
+  .imgContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    flex: 0 0 100%;
+    transition: translate 0.3s ease-in-out;
+  }
+
+  .button {
+    all: unset;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    font-size: f.toRem(24);
+    padding: 0.5rem;
+    text-align: center;
+    color: var.$secondaryfontcolor;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+  .dots {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+
+    .dot {
+      all: unset;
+      width: 10px;
+      height: 10px;
+      font-size: 10px;
+      color: var.$secondaryfontcolor;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      opacity: 0.5;
+
+      &:hover {
+        scale: 1.2;
+        opacity: 1;
+      }
+    }
+  }
+}
