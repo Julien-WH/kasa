@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss'; 
+import logo from '../../assets/images/logo.svg'
 
 function Header() {
     const [activeLink, setActiveLink] = React.useState('');
@@ -9,7 +10,7 @@ function Header() {
 
 return (
     <header className={styles.header}>
-        <img src="\src\assets\images\logo.svg" alt="Kasa" className={styles.logo} />
+        <img src={logo} alt="Logo de Kasa" className={styles.logo} />
         <nav className={styles.nav}>
             <ul className={styles.ul}>
                 <li className={styles.li}><Link to="/" className={activeLink === '/' ? styles.active : ''} onClick={() => setActiveLink("/")}>Accueil</Link></li>
