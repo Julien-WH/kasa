@@ -1,5 +1,3 @@
 {
-    "rewrites": [
-      { "source": "/(?!_next|static).*", "destination": "/" }
-    ]
-  }
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
