@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import localData from "../../datas/logements.json";
 
 const API_URL = "../../datas/logements.json";
 
