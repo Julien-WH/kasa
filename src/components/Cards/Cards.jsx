@@ -17,15 +17,6 @@ function Cards() {
     </ul>
   </>
   );
-  // return (
-    // <>
-    //   <ul className={styles.cards}>
-    //     {data.map((data) => (
-    //       <Card key={data.id} data={data} />
-    //     ))}
-    //   </ul>
-    // </>
-  // );
 }
 
 export default Cards;
