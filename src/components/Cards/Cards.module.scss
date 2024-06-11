@@ -20,9 +20,5 @@
   @include m.media-query("large") {
     padding: 50px;
     gap: 60px;
-
-    & > li {
-   
-    }
   }
 }
