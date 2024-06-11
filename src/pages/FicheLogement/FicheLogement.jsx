@@ -1,23 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./FicheLogement.module.scss";
 import Collapsible from "/src/components/Collapsible/Collapsible";
 import ImageSlider from "/src/components/ImageSlider/ImageSlider";
 import RatingDisplay from "/src/components/RatingDisplay/RatingDisplay";
 import useFetch from "../../hooks/useFetch";
-import { useParams } from 'react-router-dom'; // Import useParams
-
-
+import { useParams, useLocation } from "react-router-dom";
 
 function FicheLogement() {
   const { id } = useParams();
-  const {data, loading, error} = useFetch(id);
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Erreur: {error}</div>;
+  const location = useLocation();
+  const passedData = location.state?.data;
 
+  let data;
+  let loading;
+  let error;
+  
+  if (passedData) {
+    data = passedData;
+    console.log("Utilisation de passedData", data);
+  } else {
+    ({ data, loading, error } = useFetch(id));
+    console.log("Utilisation de useFetch", data);
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Erreur: {error}</div>;
+  }
 
   return (
     <section className={styles.section}>
-      <ImageSlider pictures={data.pictures} pageClass={styles.sliderContainer} />
+      <ImageSlider
+        pictures={data.pictures}
+        pageClass={styles.sliderContainer}
+      />
       <h1 className={styles.title}>{data.title}</h1>
 
       <div className={styles.location}>{data.location}</div>
