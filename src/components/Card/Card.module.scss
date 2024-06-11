@@ -8,7 +8,11 @@
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  min-height: 223px;
+  aspect-ratio: 1.31 / 1;
+
+  @include m.media-query("large") {
+    aspect-ratio: 1 / 1;
+  }
 
   &::after {
     content: "";
