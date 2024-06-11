@@ -7,7 +7,7 @@ function RatingDisplay({ rating, pageClass }) {
       {[...Array(5)].map((_, i) => (
         <i
           key={i}
-          className={`fa-solid fa-star ${
+          className={`fa-solid fa-star ${styles.stars} ${
             i < rating ? styles.colored : styles.empty
           }`}
         ></i>

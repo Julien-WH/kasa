@@ -1,9 +1,20 @@
 @use "/src/abstracts/variables" as var;
-
+@use "/src/abstracts/functions" as f;
+@use "/src/abstracts/mixins" as m;
 .colored {
-    color: var.$red;
+  color: var.$red;
 }
 
 .empty {
-    color: var.$grey;
+  color: var.$grey;
+}
+
+.stars {
+  font-size: f.toRem(13);
+  @include m.media-query("medium") {
+    font-size: f.toRem(18);
+  }
+  @include m.media-query("large") {
+    font-size: f.toRem(24);
+  }
 }
