@@ -1,6 +1,7 @@
 @use "/src/abstracts/variables" as var;
 @use "/src/abstracts/functions" as f;
 @use "/src/abstracts/mixins" as m;
+
 .colored {
   color: var.$red;
 }
@@ -11,6 +12,12 @@
 
 .stars {
   font-size: f.toRem(13);
+  margin-block: auto;
+  @include m.media-query("medium") {
+    margin: 0;
+    text-align: right;
+  }
+
   @include m.media-query("medium") {
     font-size: f.toRem(18);
   }

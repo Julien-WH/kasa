@@ -70,9 +70,7 @@
 
   .rating {
     grid-area: rating;
-    @include m.media-query("medium") {
-      text-align: right;
-    }
+
   }
 
   .hostProfileContainer {
