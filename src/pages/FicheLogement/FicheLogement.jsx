@@ -1,13 +1,19 @@
 import React from "react";
 import styles from "./FicheLogement.module.scss";
-import { useLocation } from "react-router-dom";
 import Collapsible from "/src/components/Collapsible/Collapsible";
 import ImageSlider from "/src/components/ImageSlider/ImageSlider";
 import RatingDisplay from "/src/components/RatingDisplay/RatingDisplay";
+import useFetch from "../../hooks/useFetch";
+import { useParams } from 'react-router-dom'; // Import useParams
+
+
 
 function FicheLogement() {
-  const location = useLocation();
-  const data = location.state.data;
+  const { id } = useParams();
+  const {data, loading, error} = useFetch(id);
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Erreur: {error}</div>;
+
 
   return (
     <section className={styles.section}>

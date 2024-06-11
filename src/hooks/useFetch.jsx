@@ -1,13 +1,41 @@
-import { useEffect, useState } from "react";
-import localData from "/datas/logements.json";
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
-const API_URL = "https://your-api-url.com"; // Replace with your actual API URL
+const API_URL = "/datas/logements.json";
 
-const useFetch = (locationState) => {
+const useFetch = (id) => {
+    const navigate = useNavigate();
+
   const [data, setData] = useState(null);
-  
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  return data;
+  useEffect(() => {
+    fetch(API_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erreur HTTP ! statut : ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((response) => {
+        if (id) {
+          const data = response.find((item) => item.id === id);
+          if (!data) {
+            navigate("/NotFound404");
+          }
+          setData(data);
+        } else {
+          setData(response);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  return { data, loading, error };
 };
-
 export default useFetch;
