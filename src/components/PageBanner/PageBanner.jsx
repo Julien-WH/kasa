@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PageBanner.module.scss";
-import aboutHeader from "../../assets/images/about-header.jpeg";
+import aboutHeader from "../../assets/images/about-header.png";
 import homeHeader from "../../assets/images/home-header.png";
 
 const pageData = {
