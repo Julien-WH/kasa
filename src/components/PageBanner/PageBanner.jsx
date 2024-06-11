@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./PageBanner.module.scss";
+import aboutHeader from "../../assets/images/about-header.jpeg";
+import homeHeader from "../../assets/images/home-header.png";
 
 const pageData = {
   aboutPage: {
     title: "",
-    img: "src/assets/images/about-header.jpeg",
+    img: aboutHeader,
     alt: "Une photo d'un paysage avec des montagnes et une forêt de sapins.",
   },
   homePage: {
     title: "Chez vous, partout et ailleurs",
-    img: "src/assets/images/home-header.png",
+    img: homeHeader,
     alt: "Une photo d'une falaise en bord de mer.",
     dropshadow: "0px 4px 4px 0px #00000040",
   },
