@@ -1,0 +1,9 @@
+@use "/src/abstracts/variables" as var;
+
+.colored {
+    color: var.$red;
+}
+
+.empty {
+    color: var.$grey;
+}

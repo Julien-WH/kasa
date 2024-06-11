@@ -3,6 +3,7 @@ import styles from "./FicheLogement.module.scss";
 import { useLocation } from "react-router-dom";
 import Collapsible from "/src/components/Collapsible/Collapsible";
 import ImageSlider from "/src/components/ImageSlider/ImageSlider";
+import RatingDisplay from "/src/components/RatingDisplay/RatingDisplay";
 
 function FicheLogement() {
   const location = useLocation();
@@ -23,11 +24,11 @@ function FicheLogement() {
         ))}
       </div>
 
-      <span className={styles.rating}>{data.rating}</span>
+      <RatingDisplay rating={data.rating} pageClass={styles.rating} />
 
       <div className={styles.hostProfileContainer}>
         <div className={styles.hostProfile}>
-          <span className={styles.hostName}>{data.host.name}</span>
+          <div className={styles.hostName}>{data.host.name}</div>
           <img
             className={styles.hostPicture}
             src={data.host.picture}

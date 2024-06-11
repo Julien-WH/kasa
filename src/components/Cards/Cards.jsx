@@ -1,11 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 import styles from "./Cards.module.scss";
 import logementDatas from "/datas/logements.json";
 import Card from "../Card/Card";
 
 function Home() {
-  const navigate = useNavigate();
 
   return (
     <>
