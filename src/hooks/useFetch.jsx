@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = "/public-datas/logements.json";
+const API_URL = "/public/public-datas/logements.json";
 const useFetch = (id) => {
     const navigate = useNavigate();
 
