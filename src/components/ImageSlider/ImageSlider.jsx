@@ -28,6 +28,9 @@ function ImageSlider({ pictures, pageClass }) {
         {pictures.map((picture, i) => (
           <img
             className={styles.img}
+            // On déplace l'image en fonction de l'index
+            // On multiplie l'index par -100 pour décaler l'image de 100% à chaque fois
+            // ex : si l'index est 1, on décale l'image de -100% pour afficher la deuxième image
             style={{ translate: `${-100 * index}%` }}
             key={i}
             src={picture}
