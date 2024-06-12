@@ -21,25 +21,29 @@ function FicheLogement() {
   let loading;
   let error;
 
+  function changePageTitle() {
+    // Changer le titre du document
+    useEffect(() => {
+      if (data && data.title) {
+        document.title = data.title;
+      }
+    }, [data]);
+  }
+
   // Si des données ont été passées en paramètre, on les utilise
   if (passedData) {
     data = passedData;
-    console.log("Utilisation de passedData", data);
+    changePageTitle();
   } else {
     // Sinon, on utilise le hook useFetch pour récupérer les données
     ({ data, loading, error } = useFetch(id));
-    console.log("Utilisation de useFetch", data);
+    changePageTitle();
     // Si les données sont en cours de chargement, on affiche un message de chargement
     // ainsi on évite d'afficher des données non existantes
     if (loading) return <div>Loading...</div>;
     // Si une erreur est retournée par useFetch, on affiche un message d'erreur
     if (error) return <div>Erreur: {error}</div>;
   }
-
-// Changer le titre du document
-useEffect(() => {
-  document.title = data ? `${data.title} sur Kasa - Location d'Appartements entre Particuliers` : "Loading...";
-}, [data]);
 
   // Affichage des détails du logement
   return (
@@ -73,7 +77,7 @@ useEffect(() => {
         </div>
       </div>
 
-        {/* On réutilise de composant Collapsible utilisé sur la page About */}
+      {/* On réutilise de composant Collapsible utilisé sur la page About */}
       <Collapsible title="Description" pageClass={styles.description}>
         {data.description}
       </Collapsible>
