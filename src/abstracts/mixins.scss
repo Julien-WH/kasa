@@ -1,6 +1,6 @@
 @use "variables" as var;
 
-// Mixin qui applique une taille de police responsive
+// Tailles de police
 @mixin responsive-font($element) {
   font-size: map-get(map-get(var.$font-sizes, $element), "small");
 
@@ -13,30 +13,7 @@
   }
 }
 
-@mixin responsive-margin($element) {
-  margin: map-get(map-get(var.$margins, $element), "small");
-
-  @media (min-width: map-get(var.$breakpoints, "medium")) {
-    margin: map-get(map-get(var.$margins, $element), "medium");
-  }
-
-  @media (min-width: map-get(var.$breakpoints, "large")) {
-    margin: map-get(map-get(var.$margins, $element), "large");
-  }
-}
-
-@mixin responsive-padding($element) {
-  padding: map-get(map-get(var.$paddings, $element), "small");
-
-  @media (min-width: map-get(var.$breakpoints, "medium")) {
-    padding: map-get(map-get(var.$paddings, $element), "medium");
-  }
-
-  @media (min-width: map-get(var.$breakpoints, "large")) {
-    padding: map-get(map-get(var.$paddings, $element), "large");
-  }
-}
-
+// Espacements
 @mixin responsive-gap($element) {
   gap: map-get(map-get(var.$gaps, $element), "small");
 
@@ -55,7 +32,7 @@
   }
 }
 
-// 
+// Gestion de la largeur des composants principaux
 @mixin mainComponentsWidth {
   max-width: calc(100vw - 2 * map-get(var.$paddings, "header", "small"));
 

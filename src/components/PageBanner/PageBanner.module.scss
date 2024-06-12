@@ -1,45 +1,44 @@
-@use '/src/abstracts/mixins' as m;
-@use '/src/abstracts/functions' as f;
-@use '/src/abstracts/variables' as var;
+@use "/src/abstracts/mixins" as m;
+@use "/src/abstracts/functions" as f;
+@use "/src/abstracts/variables" as var;
 
 .header {
-    border-radius: 10px;
-    overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 111px;
+  @include m.media-query("medium") {
+    height: 167px;
+  }
+  @include m.media-query("large") {
+    height: 223px;
+  }
+  position: relative;
+  min-width: 280px;
+
+  .img {
     width: 100%;
-    height: 111px;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+  }
+
+  .title {
+    position: absolute;
+    margin: 0;
+    padding-inline: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: f.toRem(24);
+    color: var.$white;
     @include m.media-query("medium") {
-      height: 167px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: f.toRem(32);
+      white-space: nowrap;
     }
     @include m.media-query("large") {
-      height: 223px;
+      font-size: f.toRem(48);
     }
-    position: relative;
-
-
-    .img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(40%);
-
-    }
-    
-    .title {
-        position: absolute;
-        margin: 0;
-        padding-inline: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: f.toRem(24);
-        color: var.$white;
-        @include m.media-query("medium") {
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: f.toRem(32);
-          white-space: nowrap;
-      }
-        @include m.media-query("large") {
-          font-size: f.toRem(48);
-        }
-    }
+  }
 }

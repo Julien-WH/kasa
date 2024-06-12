@@ -3,7 +3,6 @@
 @use '/src/abstracts/variables' as var;
 
 .header {
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +12,14 @@
 
 
   .logo {
-    width: 145px;
+    max-width: 100px; // le logo était trop grand en pour les écrans de 320px
+    @media screen and (min-width: 375px){
+      max-width: 145px;
+      
+    }
+    @include m.media-query ('medium') {
+      max-width: 210px;
+    }
   }
   .nav {
     .ul {

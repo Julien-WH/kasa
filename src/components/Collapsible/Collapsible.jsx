@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Collapsible.module.scss";
 
+// Composant repliable qui accepte un titre, un contenu et une 
+// classe personnalisée pour le style comme paramètres.
 function Collapsible({ title, children, pageClass }) {
   const [isOpen, setIsOpen] = React.useState(false);
   return (

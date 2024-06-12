@@ -35,11 +35,6 @@ $font-sizes: (
     "medium": f.toRem(18),
     "large": f.toRem(24),
   ),
-  // "h2": (
-  //   "small": 1rem,
-  //   "medium": 1rem,
-  //   "large": 1rem,
-  // ),
   "collapsibleButton": (
     "small": f.toRem(13),
     "medium": f.toRem(18),
@@ -74,15 +69,6 @@ $font-sizes: (
     "large": f.toRem(18),
   ),
 );
-
-// // Margins
-// $margins: (
-//   "body": (
-//     "small": f.toRem(20),
-//     "medium": f.toRem(32) f.toRem(60),
-//     "large": f.toRem(45) f.toRem(100),
-//   ),
-// );
 
 // Paddings
 $paddings: (

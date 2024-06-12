@@ -3,6 +3,7 @@ import styles from "./PageBanner.module.scss";
 import aboutHeader from "../../assets/images/about-header.png";
 import homeHeader from "../../assets/images/home-header.png";
 
+// Les données de chaque page sont stockées dans un objet
 const pageData = {
   aboutPage: {
     title: "",
@@ -17,6 +18,8 @@ const pageData = {
   },
 };
 
+// Le composant PageBanner prend en paramètre le nom de la page et affiche la bannière correspondante
+// Ainsi que le titre s'il est défini
 function PageBanner({ page }) {
   return (
     <header className={styles.header} style={{ boxShadow: pageData[page].dropshadow || '' }}>
