@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./FicheLogement.module.scss";
 import Collapsible from "/src/components/Collapsible/Collapsible";
 import ImageSlider from "/src/components/ImageSlider/ImageSlider";
@@ -35,6 +35,11 @@ function FicheLogement() {
     // Si une erreur est retournée par useFetch, on affiche un message d'erreur
     if (error) return <div>Erreur: {error}</div>;
   }
+
+// Changer le titre du document
+useEffect(() => {
+  document.title = data ? `${data.title} sur Kasa - Location d'Appartements entre Particuliers` : "Loading...";
+}, [data]);
 
   // Affichage des détails du logement
   return (
