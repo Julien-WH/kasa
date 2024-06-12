@@ -2,6 +2,10 @@
 @use "/src/abstracts/mixins" as m;
 @use "/src/abstracts/functions" as f;
 
+// Sommaire des z-index
+// 0 : Contenu collapsible
+// 1 : Boutton collapsible
+
 .container {
   width: 100%;
 
