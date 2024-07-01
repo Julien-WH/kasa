@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./NotFound404.module.scss";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function NotFound404() {
   useEffect(() => {
